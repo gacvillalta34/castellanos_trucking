@@ -1,0 +1,16 @@
+.container {
+    display: flex;  /* Establece Flexbox */
+    gap: 5px;      /* Espacio entre los divs */
+    height: 100%;
+    width: 100%;
+  }
+  
+  .info {
+    padding: 20px;
+    border: 1px solid #ccc;
+    flex: 1;        /* Los divs ocuparán el mismo ancho */
+  }
+  .info img{
+    height: 100%;
+    width: 100%;
+  }
