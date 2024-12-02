@@ -6,9 +6,10 @@
         max-snippet:-1, max-video-preview:-1"><meta name="viewport" content="width=device-width, 
         initial-scale=1">
         <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="div.css">
-		<link rel="stylesheet" href="whatsapp.css">
-		<link rel="stylesheet" href="sms.css">
+        <link rel="stylesheet" href="assets/css/div.css">
+		<link rel="stylesheet" href="assets/css/whatsapp.css">
+		<link rel="stylesheet" href="assets/css/sms.css">
+    <link rel="stylesheet" href="assets/css/button.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     </head>
     <body>
@@ -111,11 +112,19 @@
   oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'"></textarea>
 
   </div>
-  <input type="submit" id="button" value="Send Email" >
+<button class="cssbuttons-io" type="submit" id="button">
+  <span>
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path
+        d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z"
+        fill="currentColor"
+      ></path>
+    </svg>
+    Send Message</span>
+</button>
 </form>
 <script type="text/javascript"
   src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 <script type="text/javascript">
   emailjs.init('zJZRrNt6BO5mHd191')
 </script>
@@ -141,6 +150,6 @@
             <script src="assets/js/skel.min.js"></script>
             <script src="assets/js/util.js"></script>
             <script src="assets/js/main.js"></script>
-			<script src="sms.js"></script>
+			<script src="assets/js/sms.js"></script>
         </body>
     </html>
