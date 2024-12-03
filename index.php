@@ -95,16 +95,16 @@
 			 <h1>Contacto</h1>
 			 <div class="container">
 			 <form id="form">
-        <div class="field">
-    <h4>Name:</h4>
-  <label for="myInput" class="label">
-  <input type="text" name="Name" id="Name" class="input" placeholder="Type something..." style="width: 600px; height: 100px;">
-</label>
+<div class="field">
+    <h4>Name</h4>
+    <label for="myInput" class="label">
+  <input type="" name="Name" id="Name" class="input" placeholder="Type something..." style="width: 600px; height: 100px;">
+  </label>
 </div>
 <div class="field">
     <h4>Email</h4>
     <label for="myInput" class="label">
-  <input type="address" name="email" id="email" class="input" placeholder="Type something..." style="width: 600px; height: 100px;">
+  <input type="" name="email" id="email" class="input" placeholder="Type something..." style="width: 600px; height: 100px;">
   </label>
 </div>
 <div class="field">
