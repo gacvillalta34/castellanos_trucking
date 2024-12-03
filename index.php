@@ -7,6 +7,7 @@
         initial-scale=1">
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="assets/css/div.css">
+        <link rel="stylesheet" href="assets/css/inputs.css">
 		<link rel="stylesheet" href="assets/css/whatsapp.css">
 		<link rel="stylesheet" href="assets/css/sms.css">
     <link rel="stylesheet" href="assets/css/button.css">
@@ -94,24 +95,33 @@
 			 <h1>Contacto</h1>
 			 <div class="container">
 			 <form id="form">
-  <div class="field">
+        <div class="field">
     <h4>Name:</h4>
-    <input type="text" name="Name" id="Name">
-  </div>
-  <div class="field">
+  <label for="myInput" class="label">
+  <input type="text" name="Name" id="Name" class="input" placeholder="Type something..." style="width: 600px; height: 100px;">
+</label>
+</div>
+<div class="field">
     <h4>Email</h4>
-    <input type="text" name="email" id="email">
-  </div>
-  <div class="field">
+    <label for="myInput" class="label">
+  <input type="address" name="email" id="email" class="input" placeholder="Type something..." style="width: 600px; height: 100px;">
+  </label>
+</div>
+<div class="field">
     <h4>Phone</h4>
-    <input type="text" name="Phone" id="Phone">
-  </div>
-  <div class="field">
-  <h4>Message</h4>
-  <textarea name="Message" id="Message" style="width: 800px; height: 100px;" 
-  oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'"></textarea>
-
-  </div>
+    <label for="myInput" class="label">
+    <input type="phone" name="Phone" id="Phone" class="input" placeholder="Type something..." style="width: 600px; height: 50px;">
+    </label>
+</div>
+<div class="field">
+  <label for="myInput" class="label">
+    <select name="Message" id="Message">
+    <option value="---">Select an option:</option>
+    <option value="Hiring Service" class="">Hiring Service</option>
+    <option value="Jobs">Jobs</option>
+  </select>
+</label>
+</div>
 <button class="cssbuttons-io" type="submit" id="button">
   <span>
       <path d="M0 0h24v24H0z" fill="none"></path>
