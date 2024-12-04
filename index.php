@@ -1,16 +1,13 @@
-<!DOCTYPE HTML>
-    <html>
-    <head>
-        <title>CASTELLANOS TRUCKING INC</title>
+<html>
+<head>
+<title>CASTELLANOS TRUCKING INC</title>
         <meta charset="utf-8"><meta name="robots" content="index, follow, max-image-preview:large, 
         max-snippet:-1, max-video-preview:-1"><meta name="viewport" content="width=device-width, 
         initial-scale=1">
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="assets/css/div.css">
-        <link rel="stylesheet" href="assets/css/inputs.css">
 		<link rel="stylesheet" href="assets/css/whatsapp.css">
 		<link rel="stylesheet" href="assets/css/sms.css">
-    <link rel="stylesheet" href="assets/css/button.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     </head>
     <body>
@@ -90,76 +87,160 @@
 						<footer><a href="generic.html" class="button alt">Learn More</a>
 						</footer></article></div>
 			</section>
-            <!-- Footer -->
-             <footer id="footer"><div class="inner">
-			 <h1>Contacto</h1>
-			 <div class="container">
-			 <form id="form">
-<div class="field">
-    <h4>Name</h4>
-    <label for="myInput" class="label">
-  <input type="" name="Name" id="Name" class="input" placeholder="Type something..." style="width: 600px; height: 100px;">
-  </label>
+      <div class="inner">
+<h1>Contacto</h1>
+<div class="container">
+  <form id="form">
+    <div class="field">
+      <h4>Name:</h4>
+      <label for="Name" class="label">
+        <input type="text" name="Name" id="Name" placeholder="Type something...">
+      </label>
+    </div>
+
+    <div class="field">
+      <h4>Email:</h4>
+      <label for="email" class="label">
+        <input type="email" name="email" id="email" placeholder="Type something...">
+      </label>
+    </div>
+
+    <div class="field">
+      <h4>Phone:</h4>
+      <label for="Phone" class="label">
+        <input type="text" name="Phone" id="Phone" placeholder="Type something...">
+      </label>
+    </div>
+
+    <div class="field">
+      <h4>Select an option:</h4>
+      <label for="Message" class="label">
+        <select name="Message" id="Message">
+          <option value="---">Select an option:</option>
+          <option value="Hiring Service">Hiring Service</option>
+          <option value="Jobs">Jobs</option>
+        </select>
+      </label>
+    </div>
+
+    <button class="cssbuttons-io" type="submit" id="button">
+      <span>Send Message</span>
+    </button>
+  </form>
+
+  <!-- Modal de éxito -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeSuccessModal">&times;</span>
+      <div class="modal-header success">Success</div>
+      <div class="modal-body">
+        <p>¡Correo enviado exitosamente!</p>
+      </div>
+      <div class="modal-footer">
+        <button id="closeSuccessModalBtn" class="cssbuttons-io">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de error -->
+  <div id="errorModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeErrorModal">&times;</span>
+      <div class="modal-header error">Error</div>
+      <div class="modal-body">
+        <p>Hubo un error al enviar el correo. Por favor, intenta de nuevo.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="closeErrorModalBtn" class="cssbuttons-io">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    emailjs.init('zJZRrNt6BO5mHd191');
+  </script>
 </div>
-<div class="field">
-    <h4>Email</h4>
-    <label for="myInput" class="label">
-  <input type="" name="email" id="email" class="input" placeholder="Type something..." style="width: 600px; height: 100px;">
-  </label>
 </div>
-<div class="field">
-    <h4>Phone</h4>
-    <label for="myInput" class="label">
-    <input type="phone" name="Phone" id="Phone" class="input" placeholder="Type something..." style="width: 600px; height: 50px;">
-    </label>
-</div>
-<div class="field">
-  <label for="myInput" class="label">
-    <select name="Message" id="Message">
-    <option value="---">Select an option:</option>
-    <option value="Hiring Service" class="">Hiring Service</option>
-    <option value="Jobs">Jobs</option>
-  </select>
-</label>
-</div>
-<button class="cssbuttons-io" type="submit" id="button">
-  <span>
-      <path d="M0 0h24v24H0z" fill="none"></path>
-      <path
-        d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z"
-        fill="currentColor"
-      ></path>
-    </svg>
-    Send Message</span>
-</button>
-</form>
-<script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="text/javascript">
-  emailjs.init('zJZRrNt6BO5mHd191')
+<script>
+  const btn = document.getElementById('button');
+  const successModal = document.getElementById('successModal');
+  const errorModal = document.getElementById('errorModal');
+  const closeSuccessModalBtn = document.getElementById('closeSuccessModalBtn');
+  const closeErrorModalBtn = document.getElementById('closeErrorModalBtn');
+  const closeSuccessModal = document.getElementById('closeSuccessModal');
+  const closeErrorModal = document.getElementById('closeErrorModal');
+
+  document.getElementById('form')
+    .addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Cambiar texto del botón a "Sending..."
+      btn.value = 'Sending...';
+
+      const serviceID = 'default_service';  // ID del servicio de EmailJS
+      const templateID = 'template_h02127e';  // ID de la plantilla de EmailJS
+
+      // Enviar el formulario a través de EmailJS
+      emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+          // Si el envío es exitoso
+          btn.value = 'Send Email';  // Restablecer el texto del botón
+          successModal.style.display = "block";  // Mostrar modal de éxito
+        }, (err) => {
+          // Si ocurre un error
+          btn.value = 'Send Email';  // Restablecer el texto del botón
+          errorModal.style.display = "block";  // Mostrar modal de error
+        });
+    });
+
+  // Cerrar el modal de éxito
+  closeSuccessModalBtn.onclick = function() {
+    successModal.style.display = "none";
+  }
+  closeSuccessModal.onclick = function() {
+    successModal.style.display = "none";
+  }
+
+  // Cerrar el modal de error
+  closeErrorModalBtn.onclick = function() {
+    errorModal.style.display = "none";
+  }
+  closeErrorModal.onclick = function() {
+    errorModal.style.display = "none";
+  }
+
+  // Si el usuario hace clic fuera del modal, cerrarlo
+  window.onclick = function(event) {
+    if (event.target == successModal) {
+      successModal.style.display = "none";
+    } else if (event.target == errorModal) {
+      errorModal.style.display = "none";
+    }
+  }
 </script>
-</div>
-					<ul class="icons"><li><a href="#" class="icon round fa-twitter">
-                        <span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon round fa-facebook">
-                            <span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon round fa-instagram">
-                            <span class="label">Instagram</span></a></li>
-					</ul></div>
-			</footer>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.scrolly.min.js"></script>
+            <script src="assets/js/jquery.scrollex.min.js"></script>
+            <script src="assets/js/skel.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+            
+            <footer id="footer"><div class="inner">
             <div class="copyright">
 			Site made with: <a href="https://templated.co/">Templated</a>
 			<a href="https://wa.me/1234567890?text=hello+123" target=”_blank” class="whatsapp-btn">
 				<i class="bi bi-whatsapp"></i>
 			  </a>
 		</div>
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/jquery.scrolly.min.js"></script>
-            <script src="assets/js/jquery.scrollex.min.js"></script>
-            <script src="assets/js/skel.min.js"></script>
-            <script src="assets/js/util.js"></script>
-            <script src="assets/js/main.js"></script>
-			<script src="assets/js/sms.js"></script>
+    <ul class="icons"><li><a href="#" class="icon round fa-twitter">
+                        <span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon round fa-facebook">
+                            <span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon round fa-instagram">
+                            <span class="label">Instagram</span></a></li>
+					</ul></div>
+</footer>
         </body>
     </html>
